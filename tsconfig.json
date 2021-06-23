@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "build",
     "target": "es5",
     "lib": [
       "dom",
@@ -18,9 +20,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    "declaration": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "incremental": true,
   },
   "include": [
-    "src"
-  ]
+    "src/**/*"
+  ],
+  "exclude": ["node_modules", "build", "dist", "src/**/*.js", "src/**/*.jsx", "server"]
 }
