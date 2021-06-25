@@ -6,6 +6,7 @@ module.exports = {
         const { email, password } = req.body;
         
         const existingUser = await db.auth.find_user_by_email(email);
+        const user = existingUser[0];
         if(!existingUser[0]) {
             return res.status(400).send({
                 error: "User not found."
