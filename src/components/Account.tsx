@@ -1,15 +1,24 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { RouteChildrenProps } from 'react-router';
 
 import { RootState } from '../redux/store';
 
-const Account: React.FC = () => {
+import { User } from 'customTypes';
+
+const Account: React.FC<RouteChildrenProps> = (props: RouteChildrenProps) => {
     const user = useSelector((state: RootState) => state.userReducer)
 
     const [username, setUsername] = useState<string>(user.username);
     const [email, setEmail] = useState<string>(user.email);
     const [password, setPassword] = useState<string>('password');
+
+    const [isEditingUsername, setIsEditingUsername] = useState<boolean>(false);
+    const [isEditingEmail, setIsEditingEmail] = useState<boolean>(false);
+    const [isEditingPassword, setIsEditingPassword] = useState<boolean>(false);
+
+    const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
     const dispatch = useDispatch();
 
@@ -22,6 +31,25 @@ const Account: React.FC = () => {
     useEffect((): void => {
         captureCurrentUser();
     }, [user]);
+
+    const toggleEditUsername = (): void => {
+        setIsEditingUsername(!isEditingUsername);
+      };
+      const toggleEditEmail = (): void => {
+        setIsEditingEmail(!isEditingEmail);
+      };
+      const toggleEditPassword = (): void => {
+        setIsEditingPassword(!isEditingPassword);
+      };
+      const toggleDelete = (): void => {
+        setIsDeleting(!isDeleting);
+      };
+    
+      const setEditing = (): void => {
+        setIsEditingUsername(false);
+        setIsEditingEmail(false);
+        setIsEditingPassword(false);
+      };
 
     const saveChanges = (param: string): void => {
         let body = null;
@@ -37,16 +65,37 @@ const Account: React.FC = () => {
                 break;
         }
         axios.put(`api/user/${param}`, body)
-        .then((res) => {
+        .then ( async (res: AxiosResponse<User>): Promise<void> => {
             const user = res.data;
             dispatch({ type: 'UPDATE_USER', payload: user});
+            setEditing();
         })
         .catch((error) => console.log(error))
-    }
+    };
+
+    const confirmDelete = (): void => {
+        axios.delete('/api/user/delete')
+        .then(() => {
+            props.history.push('/');
+        })
+        .catch((error) => console.log(error))
+    }; 
 
     return (
         <div>
             <h3>Account Component</h3>
+            {!isDeleting ? (
+                <>
+                    <button onClick={toggleDelete}>delete</button>
+                </> 
+            ) :
+            (
+                <div>
+                    <p>Are you sure you wish to delete your account?</p>
+                    <button onClick={confirmDelete}>confirm</button>
+                    <button onClick={toggleDelete}>&#10005;</button>
+                </div>
+            )}
         </div>
     )
 }
