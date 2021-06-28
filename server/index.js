@@ -2,7 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const massive = require('massive');
+
 const auth = require('./controllers/authController');
+const authCheck = require('./middleware/authMiddleware');
 
 
 const app = express();
@@ -39,8 +41,8 @@ app.delete('/api/auth/logout', auth.logout);
 // app.delete('/api/boot/boot');
 
 //User endpoints
-// app.put('/api/user/:editType');
-// app.delete('/api/user/delete');
+app.put('/api/user/:editType');
+app.delete('/api/user/delete');
 
 //Friend endpoints
 // app.get('/api/friend/people');
