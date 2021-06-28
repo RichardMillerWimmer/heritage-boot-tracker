@@ -1,11 +1,11 @@
 export interface User {
-    user_id: number | null;
+    id: number;
     email: string;
     username: string;
   }
   
   const initialState: User = {
-    user_id: null,
+    id: 0,
     email: '',
     username: ''
   };
@@ -17,7 +17,7 @@ export interface User {
       case 'UPDATE_USER':
         return {
           ...state,
-          user_id: action.payload.user_id,
+          id: action.payload.id,
           email: action.payload.email,
           username: action.payload.username
         };

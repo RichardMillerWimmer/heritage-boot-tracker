@@ -7,8 +7,8 @@ import { User } from 'customTypes';
 const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    // const [isError, setIsError] = useState<boolean>(false);
-    // const [error, setError] = useState<string>('');
+    const [isError, setIsError] = useState<boolean>(false);
+    const [error, setError] = useState<string>('');
 
     const dispatch = useDispatch();
 
@@ -16,14 +16,15 @@ const Login: React.FC = () => {
         axios.post<User>('/api/auth/login', {email, password})
         .then((res) => {
             const user = res.data;
+            // console.log(user)
             dispatch({ type: 'UPDATE_USER', payload: user});
             setEmail('');
             setPassword('');
         })
         .catch((error => {
             console.log(error)
-            // setIsError(true);
-            // setError(error)
+            setIsError(true);
+            setError(error)
         }))
 
     }
@@ -52,7 +53,7 @@ const Login: React.FC = () => {
                 />
                 <br></br>
                 <button>login</button>
-                {/* {isError? <p>{error}</p> : ''} */}
+                {isError? <p>{error}</p> : ''}
                 <div className="needToRegister"></div>
             </form>
         </div>
