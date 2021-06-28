@@ -111,6 +111,47 @@ const Account: React.FC<RouteChildrenProps> = (props: RouteChildrenProps) => {
                     <button onClick={(): void => {cancelChanges(); toggleEditUsername();}}>cancel</button>
                 </form>
             )}
+            {!isEditingEmail ? (
+                <section>
+                    <p>email: {email}</p>
+                    <button onClick={toggleEditEmail}>edit</button>
+                </section>
+            ) : (
+                <form 
+                onSubmit={(e: React.SyntheticEvent) => {
+                    e.preventDefault();
+                }}
+                >
+                    <p>email:</p>
+                    <input 
+                    value={email}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
+                    />
+                    <button onClick={(): void => saveChanges('email')}>save</button>
+                    <button onClick={(): void => {cancelChanges(); toggleEditEmail();}}>cancel</button>
+                </form>
+            )}
+            {!isEditingPassword ? (
+                <section>
+                    <p>password: {password}</p>
+                    <button onClick={toggleEditPassword}>edit</button>
+                </section>
+            ) : (
+                <form 
+                onSubmit={(e: React.SyntheticEvent) => {
+                    e.preventDefault();
+                }}
+                >
+                    <p>password:</p>
+                    <input 
+                    type='password'
+                    value={password}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
+                    />
+                    <button onClick={(): void => saveChanges('password')}>save</button>
+                    <button onClick={(): void => {cancelChanges(); toggleEditPassword();}}>cancel</button>
+                </form>
+            )}
             </div>
             {!isDeleting ? (
                 <>
