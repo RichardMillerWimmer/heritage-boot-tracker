@@ -81,9 +81,37 @@ const Account: React.FC<RouteChildrenProps> = (props: RouteChildrenProps) => {
         .catch((error) => console.log(error))
     }; 
 
+    const cancelChanges = (): void => {
+        setUsername(user.username);
+        setEmail(user.email);
+        setPassword(password);
+      };
+
     return (
         <div>
-            <h3>Account Component</h3>
+            <div>
+            <h3>My Account</h3>
+            {!isEditingUsername ? (
+                <section>
+                    <p>username: {username}</p>
+                    <button onClick={toggleEditUsername}>edit</button>
+                </section>
+            ) : (
+                <form 
+                onSubmit={(e: React.SyntheticEvent) => {
+                    e.preventDefault();
+                }}
+                >
+                    <p>username:</p>
+                    <input 
+                    value={username}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setUsername(e.target.value)}
+                    />
+                    <button onClick={(): void => saveChanges('username')}>save</button>
+                    <button onClick={(): void => {cancelChanges(); toggleEditUsername();}}>cancel</button>
+                </form>
+            )}
+            </div>
             {!isDeleting ? (
                 <>
                     <button onClick={toggleDelete}>delete</button>
