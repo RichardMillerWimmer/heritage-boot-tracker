@@ -1,10 +1,32 @@
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
+
+import { User } from 'customTypes';
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [isError, setIsError] = useState<boolean>(false);
-    const [error, setError] = useState<string>('');
+    // const [isError, setIsError] = useState<boolean>(false);
+    // const [error, setError] = useState<string>('');
+
+    const dispatch = useDispatch();
+
+    const login = (): void => {
+        axios.post<User>('/api/auth/login', {email, password})
+        .then((res) => {
+            const user = res.data;
+            dispatch({ type: 'UPDATE_USER', payload: user});
+            setEmail('');
+            setPassword('');
+        })
+        .catch((error => {
+            console.log(error)
+            // setIsError(true);
+            // setError(error)
+        }))
+
+    }
 
     return (
         <div>
@@ -20,6 +42,7 @@ const Login: React.FC = () => {
                 placeholder="email"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
                 />
+                <br></br>
                 <label htmlFor="password">password:</label>
                 <input 
                 type="password"
@@ -27,6 +50,10 @@ const Login: React.FC = () => {
                 placeholder="password"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
                 />
+                <br></br>
+                <button>login</button>
+                {/* {isError? <p>{error}</p> : ''} */}
+                <div className="needToRegister"></div>
             </form>
         </div>
     )

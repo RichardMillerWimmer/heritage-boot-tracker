@@ -1,11 +1,11 @@
 export interface User {
-    user_id: number;
+    user_id: number | null;
     email: string;
     username: string;
   }
   
   const initialState: User = {
-    user_id: 0,
+    user_id: null,
     email: '',
     username: ''
   };

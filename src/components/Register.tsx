@@ -9,8 +9,8 @@ const Register: React.FC = () => {
     const [username, setUsername] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [isError, setIsError] = useState<boolean>(false);
-    const [error, setError] = useState<string>('');
+    // const [isError, setIsError] = useState<boolean>(false);
+    // const [error, setError] = useState<string>('');
 
 
     const dispatch = useDispatch();
@@ -25,8 +25,9 @@ const Register: React.FC = () => {
                 setPassword('');
             })
             .catch((error => {
-                setIsError(true);
-                setError(error)
+                console.log(error)
+                // setIsError(true);
+                // setError(error)
             }))
     }
 
@@ -62,7 +63,7 @@ const Register: React.FC = () => {
                 />
                 <br></br>
                 <button>register</button>
-                {isError? <p>{error}</p>: ''}
+                {/* {isError? <p>{error}</p> : ''} */}
                 <div className="alreadyRegistered"></div>
             </form>
         </div>
