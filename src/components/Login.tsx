@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
@@ -13,19 +13,19 @@ const Login: React.FC = () => {
     const dispatch = useDispatch();
 
     const login = (): void => {
-        axios.post<User>('/api/auth/login', {email, password})
-        .then((res) => {
-            const user = res.data;
-            // console.log(user)
-            dispatch({ type: 'UPDATE_USER', payload: user});
-            setEmail('');
-            setPassword('');
-        })
-        .catch((error => {
-            console.log(error)
-            setIsError(true);
-            setError(error)
-        }))
+        axios.post<User>('/api/auth/login', { email, password })
+            .then((res) => {
+                const user = res.data;
+                // console.log(user)
+                dispatch({ type: 'UPDATE_USER', payload: user });
+                setEmail('');
+                setPassword('');
+            })
+            .catch((error => {
+                console.log(error)
+                setIsError(true);
+                setError(error)
+            }))
 
     }
 
@@ -37,23 +37,23 @@ const Login: React.FC = () => {
                 login();
             }}>
                 <label htmlFor="email">email:</label>
-                <input 
-                type="text"
-                value={email}
-                placeholder="email"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
+                <input
+                    type="text"
+                    value={email}
+                    placeholder="email"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
                 />
                 <br></br>
                 <label htmlFor="password">password:</label>
-                <input 
-                type="password"
-                value={password}
-                placeholder="password"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
+                <input
+                    type="password"
+                    value={password}
+                    placeholder="password"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
                 />
                 <br></br>
                 <button>login</button>
-                {isError? <p>{error}</p> : ''}
+                {isError ? <p>{error}</p> : ''}
                 <div className="needToRegister"></div>
             </form>
         </div>

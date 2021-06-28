@@ -6,14 +6,14 @@ import { RouteComponentProps, withRouter } from 'react-router';
 const Header: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
 
     const dispatch = useDispatch();
-    
+
     const logout = (): void => {
         axios.delete('/api/auth/logout')
-        .then(() => {
-            props.history.push('/');
-            dispatch({type: 'LOGOUT_USER'});
-        })
-        .catch((error) => console.log(error))
+            .then(() => {
+                props.history.push('/');
+                dispatch({ type: 'LOGOUT_USER' });
+            })
+            .catch((error) => console.log(error))
     }
 
     return (
