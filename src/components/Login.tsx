@@ -36,16 +36,18 @@ const Login: React.FC = () => {
                 e.preventDefault();
                 login();
             }}>
-                <label htmlFor="email">email:</label>
+                <label htmlFor="loginEmail">email:</label>
                 <input
+                id="loginEmail"
                     type="email"
                     value={email}
                     placeholder="email"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
                 />
                 <br></br>
-                <label htmlFor="password">password:</label>
+                <label htmlFor="loginPassword">password:</label>
                 <input
+                    id="loginPassword"
                     type="password"
                     value={password}
                     placeholder="password"

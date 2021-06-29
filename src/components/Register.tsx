@@ -40,23 +40,26 @@ const Register: React.FC = () => {
                     register();
                 }}>
                 <h3>Register</h3>
-                <label htmlFor="username">username:</label>
+                <label htmlFor="registerUsername">username:</label>
                 <input
+                    id="registerUsername"
                     value={username}
                     placeholder="username"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setUsername(e.target.value)}
                 />
                 <br></br>
-                <label htmlFor="email">email:</label>
+                <label htmlFor="registerEmail">email:</label>
                 <input
+                    id="registerEmail"
                     type="email"
                     value={email}
                     placeholder="email"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
                 />
                 <br></br>
-                <label htmlFor="password">password:</label>
+                <label htmlFor="registerPassword">password:</label>
                 <input
+                    id="registerPassword"
                     type="password"
                     value={password}
                     placeholder="password"

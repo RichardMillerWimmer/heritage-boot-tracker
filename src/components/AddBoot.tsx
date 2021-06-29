@@ -104,6 +104,7 @@ const AddBoot: React.FC = () => {
                 placeholder="image url"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setImg(e.target.value)}
                  />
+                 <button>add boot</button>
             </form>
         </div>
     )
