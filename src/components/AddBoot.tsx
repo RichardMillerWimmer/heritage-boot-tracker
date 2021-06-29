@@ -3,28 +3,24 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 const AddBoot: React.FC = () => {
-    const [make, setMake] = useState<string>('');
-    const [model, setModel] = useState<string>('');
-    const [leather, setLeather] = useState<string>('');
+    const [name, setName] = useState<string>('');
+    const [img, setImg] = useState<string>('');
     const [wears, setWears] = useState<string>('');
     const [ccs, setCcs] = useState<string>('');
     const [note, setNote] = useState<string>('');
-    const [img, setImg] = useState<string>('');
 
     const dispatch = useDispatch();
 
     const addBoot = (): void => {
-        axios.post('/api/boot/add', {make, model, leather, wears, ccs, note, img })
+        axios.post('/api/boot/add', {name, wears, ccs, note, img })
         .then((res) => {
             const boot = res.data;
             dispatch({type: 'ADD_BOOT', payload: boot});
-            setMake(''); 
-            setModel(''); 
-            setLeather(''); 
+            setName(''); 
+            setImg(''); 
+            setNote(''); 
             setWears(''); 
             setCcs(''); 
-            setNote(''); 
-            setImg(''); 
         })
         .catch((error => console.log(error)))
     };
@@ -38,31 +34,13 @@ const AddBoot: React.FC = () => {
                 e.preventDefault();
                 addBoot();
             }}>
-                <label htmlFor="addMake">make:</label>
+                <label htmlFor="addName">name:</label>
                 <input 
-                id="addMake"
+                id="addName"
                 type="text"
-                value={make}
+                value={name}
                 placeholder="make"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setMake(e.target.value)}
-                 />
-                 <br></br>
-                <label htmlFor="addModel">model:</label>
-                <input 
-                id="addModel"
-                type="text"
-                value={model}
-                placeholder="model"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setModel(e.target.value)}
-                 />
-                 <br></br>
-                <label htmlFor="addLeather">leather:</label>
-                <input 
-                id="addLeather"
-                type="text"
-                value={leather}
-                placeholder="leather"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setLeather(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setName(e.target.value)}
                  />
                  <br></br>
                 <label htmlFor="addWears">wears:</label>
