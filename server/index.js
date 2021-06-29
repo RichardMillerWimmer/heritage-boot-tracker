@@ -5,6 +5,7 @@ const massive = require('massive');
 
 const auth = require('./controllers/authController');
 const authCheck = require('./middleware/authMiddleware');
+const boot = require('./controllers/bootController');
 
 
 const app = express();
@@ -34,11 +35,11 @@ app.delete('/api/auth/logout', auth.logout);
 //Boot endpoints
 // app.get('/api/boot/boot');
 // app.get('/api/boot/boot/:id');
-app.post('/api/boot/add');
+app.post('/api/boot/add', boot.addBoot);
 // app.post('/api/boot/wear');
 // app.post('/api/boot/cc');
 // app.put('/api/boot/:id');
-// app.delete('/api/boot/boot');
+app.delete('/api/boot/:id', boot.deleteBoot);
 
 //User endpoints
 app.put('/api/user/:editType');
