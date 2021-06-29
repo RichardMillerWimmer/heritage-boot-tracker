@@ -47,7 +47,7 @@ const AddBoot: React.FC = () => {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setMake(e.target.value)}
                  />
                  <br></br>
-                <label htmlFor="addModel"></label>
+                <label htmlFor="addModel">model:</label>
                 <input 
                 id="addModel"
                 type="text"
@@ -56,7 +56,7 @@ const AddBoot: React.FC = () => {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setModel(e.target.value)}
                  />
                  <br></br>
-                <label htmlFor="addLeather"></label>
+                <label htmlFor="addLeather">leather:</label>
                 <input 
                 id="addLeather"
                 type="text"
@@ -65,7 +65,7 @@ const AddBoot: React.FC = () => {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setLeather(e.target.value)}
                  />
                  <br></br>
-                <label htmlFor="addWears"></label>
+                <label htmlFor="addWears">wears:</label>
                 <input 
                 id="addWears"
                 type="number"
@@ -76,7 +76,7 @@ const AddBoot: React.FC = () => {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setWears(e.target.value)}
                  />
                  <br></br>
-                <label htmlFor="addCcs"></label>
+                <label htmlFor="addCcs">clean and conditions:</label>
                 <input 
                 id="addCcs"
                 type="number"
@@ -87,7 +87,7 @@ const AddBoot: React.FC = () => {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setCcs(e.target.value)}
                  />
                  <br></br>
-                <label htmlFor="addNote"></label>
+                <label htmlFor="addNote">notes:</label>
                 <textarea 
                 id="addNote"
                 form="addBootForm"
@@ -96,7 +96,7 @@ const AddBoot: React.FC = () => {
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>): void => setNote(e.target.value)}
                  />
                  <br></br>
-                <label htmlFor="addImage"></label>
+                <label htmlFor="addImage">image:</label>
                 <input 
                 id="addImage"
                 type="text"
@@ -104,6 +104,7 @@ const AddBoot: React.FC = () => {
                 placeholder="image url"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setImg(e.target.value)}
                  />
+                 <br />
                  <button>add boot</button>
             </form>
         </div>
