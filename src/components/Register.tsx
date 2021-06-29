@@ -49,6 +49,7 @@ const Register: React.FC = () => {
                 <br></br>
                 <label htmlFor="email">email:</label>
                 <input
+                    type="email"
                     value={email}
                     placeholder="email"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}

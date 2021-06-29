@@ -38,7 +38,7 @@ const Login: React.FC = () => {
             }}>
                 <label htmlFor="email">email:</label>
                 <input
-                    type="text"
+                    type="email"
                     value={email}
                     placeholder="email"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
