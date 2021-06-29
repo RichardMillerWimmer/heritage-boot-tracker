@@ -37,7 +37,7 @@ app.delete('/api/auth/logout', auth.logout);
 // app.post('/api/boot/add');
 // app.post('/api/boot/wear');
 // app.post('/api/boot/cc');
-// app.put('/api/boot/boot');
+// app.put('/api/boot/:id');
 // app.delete('/api/boot/boot');
 
 //User endpoints
