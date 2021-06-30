@@ -1,6 +1,9 @@
-import React from 'react';
+import React
 
-const BootBox: React.FC = () => {
+import { Boot } from 'customTypes';
+
+const BootBox: React.FC<Boot> = (props: Boot): JSX.Element => {
+    const {boot_id, name, image, notes, wears, cc} = props.boot;
 
     return (
         <div>

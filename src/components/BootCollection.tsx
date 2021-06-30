@@ -4,12 +4,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 
 import { Boot } from 'customTypes';
+import BootBox from './BootBox';
 
 const BootCollection: React.FC = () => {
     const user = useSelector((state: RootState) => state.userReducer)
 
     const [userBoots, setUserBoots] = useState<Boot[]>([]);
-    const [mappedBoots, setMappedBoots] = useState<ReactNodeArray>([])
 
     useEffect((): void => {
         getUserBoots()
@@ -23,12 +23,23 @@ const BootCollection: React.FC = () => {
             setUserBoots(userBootsData);
         })
         .catch((error) => console.log(error))
-    }
+    };
+
+    const mappedBoots = () => {
+        userBoots.map((elem: Boot, index: number) => {
+            return (
+                <div key={index}>
+                    <BootBox boot={elem}></BootBox>
+                </div>
+            )
+        })
+    };
 
 
     return (
         <div>
             <h3>{user.username} Boot Collection</h3>
+            {mappedBoots}
         </div>
     )
 }
