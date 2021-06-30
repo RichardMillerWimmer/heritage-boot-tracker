@@ -33,7 +33,7 @@ app.get('/api/auth/user', auth.getUser);
 app.delete('/api/auth/logout', auth.logout);
 
 //Boot endpoints
-// app.get('/api/boot/boot');
+app.get('/api/boot/boot');
 // app.get('/api/boot/boot/:id');
 app.post('/api/boot/add', boot.addBoot);
 // app.post('/api/boot/wear');
