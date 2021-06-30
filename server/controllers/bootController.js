@@ -1,4 +1,11 @@
 module.exports = {
+    getBoots: async (req, res) => {
+        const db = req.app.get('db');
+        const { id } = req.session.user;
+
+        const boots = await db.boots.get_user_boots(id);
+        res.status(200).send(boots);
+    },
     addBoot: async (req, res) => {
         const db = req.app.get('db');
         const { id } = req.session.user;
