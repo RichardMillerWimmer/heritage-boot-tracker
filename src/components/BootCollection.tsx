@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { ReactNodeArray, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 
@@ -29,7 +29,7 @@ const BootCollection: React.FC = () => {
         userBoots.map((elem: Boot, index: number) => {
             return (
                 <div key={index}>
-                    <BootBox boot={elem}></BootBox>
+                    <BootBox {...elem}></BootBox>
                 </div>
             )
         })
