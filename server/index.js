@@ -36,8 +36,8 @@ app.delete('/api/auth/logout', auth.logout);
 app.get('/api/boot/boot');
 // app.get('/api/boot/boot/:id');
 app.post('/api/boot/add', boot.addBoot);
-// app.post('/api/boot/wear');
-// app.post('/api/boot/cc');
+app.post('/api/boot/wear/:id');
+app.post('/api/boot/cc/:id');
 // app.put('/api/boot/:id');
 app.delete('/api/boot/:id', boot.deleteBoot);
 

@@ -39,6 +39,9 @@ module.exports = {
         
         res.status(200).send(boots);
     },
+
+    // edtiBoot Section
+
     deleteBoot: async (req, res) => {
         const db = req.app.get('db');
         const { boot_id } = req.params;
