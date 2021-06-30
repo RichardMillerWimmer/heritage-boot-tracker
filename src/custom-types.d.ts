@@ -3,5 +3,13 @@ declare module 'customTypes' {
         email: string;
         username: string;
         // password: string;
-    }
+    };
+
+    export type Boot = {
+        name: string;
+        image: string;
+        notes: string;
+        wears: number;
+        cc: number;
+    };
 }
