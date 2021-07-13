@@ -12,4 +12,6 @@ declare module 'customTypes' {
         wears: number;
         cc: number;
     };
+
+    
 }
