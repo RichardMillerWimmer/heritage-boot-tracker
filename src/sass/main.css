@@ -73,6 +73,40 @@ label {
   font-family: "Montserrat", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Serif Pro", serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.8rem;
+}
+
 .App {
   display: flex;
   flex-flow: column;
@@ -80,6 +114,13 @@ label {
   justify-content: center;
   min-height: 100vh;
   min-width: 100vw;
+}
+
+.login {
+  border-bottom: 2px solid #c11129;
+}
+.login:hover {
+  border-bottom: 2px solid black;
 }
 
 /*# sourceMappingURL=main.css.map */
