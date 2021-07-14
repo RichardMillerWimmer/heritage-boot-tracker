@@ -116,10 +116,10 @@ h6 {
   min-width: 100vw;
 }
 
-.login {
+.login h3 {
   border-bottom: 2px solid #c11129;
 }
-.login:hover {
+.login h3:hover {
   border-bottom: 2px solid black;
 }
 
