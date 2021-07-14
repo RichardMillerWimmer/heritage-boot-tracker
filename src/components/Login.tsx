@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import { User } from 'customTypes';
 
+import Button from './Button';
+
 const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -54,7 +56,7 @@ const Login: React.FC = () => {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
                 />
                 <br></br>
-                <button>login</button>
+                <Button>login</Button>
                 {/* {isError ? <p>{error}</p> : ''} */}
                 <div className="needToRegister"></div>
             </form>
