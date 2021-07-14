@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 
 import routes from './route';
 
-import './App.css';
+import './sass/main.css'
 
 const App: React.FC = () => {
   return (

@@ -116,11 +116,26 @@ h6 {
   min-width: 100vw;
 }
 
-.login h3 {
-  border-bottom: 2px solid #c11129;
+.footer {
+  width: 100vw;
+  height: 150px;
+  background: #252320;
+  color: white;
+  text-align: center;
+  padding: 30px;
 }
-.login h3:hover {
-  border-bottom: 2px solid black;
+.footer .linkFlex {
+  display: flex;
+  justify-content: center;
+}
+.footer .linkFlex img {
+  height: 50px;
+  margin: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */
