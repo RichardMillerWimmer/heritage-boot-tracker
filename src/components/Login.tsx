@@ -30,7 +30,7 @@ const Login: React.FC = () => {
     }
 
     return (
-        <div>
+        <section className='login'>
             <h3>Login Component</h3>
             <form onSubmit={(e: React.SyntheticEvent) => {
                 e.preventDefault();
@@ -58,7 +58,7 @@ const Login: React.FC = () => {
                 {/* {isError ? <p>{error}</p> : ''} */}
                 <div className="needToRegister"></div>
             </form>
-        </div>
+        </section>
     )
 }
 
