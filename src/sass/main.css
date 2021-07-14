@@ -116,6 +116,20 @@ h6 {
   min-width: 100vw;
 }
 
+.header {
+  width: 100vw;
+  height: 70px;
+  background: #eae5d8;
+  position: relative;
+}
+.header h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .footer {
   width: 100vw;
   height: 150px;

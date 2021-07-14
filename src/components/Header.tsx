@@ -17,10 +17,10 @@ const Header: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
     }
 
     return (
-        <div>
-            <h3>Header Component</h3>
+        <section className='header'>
+            <h3>Heritage Boot Collector</h3>
             <button onClick={logout}>logout</button>
-        </div>
+        </section>
     )
 }
 
