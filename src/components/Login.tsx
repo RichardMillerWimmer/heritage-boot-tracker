@@ -24,7 +24,7 @@ const Login: React.FC = () => {
                 setPassword('');
             })
             .catch((error => {
-                console.log(error)
+                console.log(error) 
                 // setIsError(true);
                 // setError(error)
             }))
@@ -33,11 +33,11 @@ const Login: React.FC = () => {
 
     return (
         <section className='login'>
-            <h3>Login Component</h3>
             <form onSubmit={(e: React.SyntheticEvent) => {
                 e.preventDefault();
                 login();
             }}>
+                <h3>Login</h3>
                 <label htmlFor="loginEmail">email:</label>
                 <input
                 id="loginEmail"
