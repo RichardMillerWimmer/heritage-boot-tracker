@@ -69,6 +69,10 @@ textarea {
   font-family: "Montserrat", sans-serif;
 }
 
+p {
+  line-height: 1.3rem;
+}
+
 label {
   font-family: "Montserrat", sans-serif;
 }
@@ -160,7 +164,7 @@ a {
 
 .login {
   margin: 50px 20px;
-  height: calc( 100vh - 220px );
+  height: calc( 100vh - 270px );
   text-align: center;
 }
 .login form {
@@ -195,7 +199,7 @@ a {
 
 .register {
   margin: 50px 20px;
-  height: calc( 100vh - 220px );
+  height: calc( 100vh - 270px );
   text-align: center;
   position: relative;
 }
@@ -226,6 +230,45 @@ a {
   margin: 5px 0;
 }
 .register button {
+  margin: 10px 0 0 0;
+}
+
+.addBoot {
+  margin: 50px 20px;
+  height: calc( 100vh - 270px );
+  text-align: center;
+}
+.addBoot form {
+  padding: 30px 50px;
+  position: relative;
+  display: inline-block;
+  border: 2px solid #252320;
+  border-radius: 2% 7% 5% 4%/1% 1% 2% 4%;
+}
+.addBoot form::before {
+  content: "";
+  pointer-events: none;
+  border: 2px solid #252320;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.75deg);
+  border-radius: 1% 1% 2% 2%/8% 6% 5% 4%;
+}
+.addBoot h3 {
+  margin-bottom: 20px;
+}
+.addBoot textarea {
+  height: 120px;
+  width: 200px;
+}
+.addBoot input {
+  margin: 5px 0;
+}
+.addBoot button {
   margin: 10px 0 0 0;
 }
 
