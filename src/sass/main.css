@@ -73,6 +73,10 @@ label {
   font-family: "Montserrat", sans-serif;
 }
 
+input:focus {
+  border: 1px solid #c11129;
+}
+
 h1,
 h2,
 h3,
@@ -185,6 +189,40 @@ a {
   margin: 5px 0;
 }
 .login button {
+  margin: 10px 0 0 0;
+}
+
+.register {
+  margin: 50px 20px;
+  height: calc( 100vh - 220px );
+  text-align: center;
+}
+.register form {
+  padding: 30px 50px;
+  position: relative;
+  display: inline-block;
+  border: 2px solid #252320;
+  border-radius: 2% 7% 5% 4%/1% 1% 2% 4%;
+}
+.register form::before {
+  content: "";
+  border: 2px solid #252320;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.75deg);
+  border-radius: 1% 1% 2% 2%/8% 6% 5% 4%;
+}
+.register h3 {
+  margin-bottom: 20px;
+}
+.register input {
+  margin: 5px 0;
+}
+.register button {
   margin: 10px 0 0 0;
 }
 

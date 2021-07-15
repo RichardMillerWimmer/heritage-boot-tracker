@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import { User } from 'customTypes';
 
+import Button from './Button';
 
 const Register: React.FC = () => {
     const [username, setUsername] = useState<string>('');
@@ -33,14 +34,14 @@ const Register: React.FC = () => {
 
 
     return (
-        <div>
+        <div className='register'>
             <form
                 onSubmit={(e: React.SyntheticEvent) => {
                     e.preventDefault();
                     register();
                 }}>
                 <h3>Register</h3>
-                <label htmlFor="registerUsername">username:</label>
+                <label htmlFor="registerUsername"></label>
                 <input
                     id="registerUsername"
                     value={username}
@@ -48,7 +49,7 @@ const Register: React.FC = () => {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setUsername(e.target.value)}
                 />
                 <br></br>
-                <label htmlFor="registerEmail">email:</label>
+                <label htmlFor="registerEmail"></label>
                 <input
                     id="registerEmail"
                     type="email"
@@ -57,7 +58,7 @@ const Register: React.FC = () => {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
                 />
                 <br></br>
-                <label htmlFor="registerPassword">password:</label>
+                <label htmlFor="registerPassword"></label>
                 <input
                     id="registerPassword"
                     type="password"
@@ -66,7 +67,7 @@ const Register: React.FC = () => {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
                 />
                 <br></br>
-                <button>register</button>
+                <Button>register</Button>
                 {/* {isError? <p>{error}</p> : ''} */}
                 <div className="alreadyRegistered"></div>
             </form>

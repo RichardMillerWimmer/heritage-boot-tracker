@@ -38,7 +38,7 @@ const Login: React.FC = () => {
                 login();
             }}>
                 <h3>Login</h3>
-                <label htmlFor="loginEmail">email:</label>
+                <label htmlFor="loginEmail"></label>
                 <input
                 id="loginEmail"
                     type="email"
@@ -47,7 +47,7 @@ const Login: React.FC = () => {
                     onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
                 />
                 <br></br>
-                <label htmlFor="loginPassword">password:</label>
+                <label htmlFor="loginPassword"></label>
                 <input
                     id="loginPassword"
                     type="password"
