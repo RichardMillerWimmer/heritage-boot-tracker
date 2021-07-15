@@ -172,6 +172,7 @@ a {
 }
 .login form::before {
   content: "";
+  pointer-events: none;
   border: 2px solid #252320;
   display: block;
   width: 100%;
@@ -196,6 +197,7 @@ a {
   margin: 50px 20px;
   height: calc( 100vh - 220px );
   text-align: center;
+  position: relative;
 }
 .register form {
   padding: 30px 50px;
@@ -206,6 +208,7 @@ a {
 }
 .register form::before {
   content: "";
+  pointer-events: none;
   border: 2px solid #252320;
   display: block;
   width: 100%;

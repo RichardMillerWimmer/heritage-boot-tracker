@@ -40,7 +40,7 @@ const Login: React.FC = () => {
                 <h3>Login</h3>
                 <label htmlFor="loginEmail"></label>
                 <input
-                id="loginEmail"
+                    id="loginEmail"
                     type="email"
                     value={email}
                     placeholder="email"
