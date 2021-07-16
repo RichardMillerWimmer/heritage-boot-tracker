@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RouteChildrenProps } from 'react-router';
 
+import Button from './Button';
+
 import { RootState } from '../redux/store';
 
 import { User } from 'customTypes';
@@ -89,11 +91,11 @@ const Account: React.FC<RouteChildrenProps> = (props: RouteChildrenProps) => {
 
     return (
         <div className='account'>
-            <form>
+            <form className='outerForm'>
                 <div>
                     <h3>My Account</h3>
                     {!isEditingUsername ? (
-                        <section>
+                        <section className='editContainer'>
                             <p>username: {username}</p>
                             <button onClick={toggleEditUsername}>edit</button>
                         </section>
@@ -113,7 +115,7 @@ const Account: React.FC<RouteChildrenProps> = (props: RouteChildrenProps) => {
                         </form>
                     )}
                     {!isEditingEmail ? (
-                        <section>
+                        <section className='editContainer'>
                             <p>email: {email}</p>
                             <button onClick={toggleEditEmail}>edit</button>
                         </section>
@@ -133,7 +135,7 @@ const Account: React.FC<RouteChildrenProps> = (props: RouteChildrenProps) => {
                         </form>
                     )}
                     {!isEditingPassword ? (
-                        <section>
+                        <section className='editContainer'>
                             <p>password: {password}</p>
                             <button onClick={toggleEditPassword}>edit</button>
                         </section>
@@ -156,7 +158,7 @@ const Account: React.FC<RouteChildrenProps> = (props: RouteChildrenProps) => {
                 </div>
                 {!isDeleting ? (
                     <>
-                        <button onClick={toggleDelete}>delete</button>
+                        <Button onClick={toggleDelete}>delete</Button>
                     </>
                 ) :
                     (

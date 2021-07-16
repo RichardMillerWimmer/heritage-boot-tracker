@@ -168,14 +168,14 @@ a {
   text-align: center;
   position: relative;
 }
-.account form {
+.account .outerForm {
   padding: 30px 50px;
   position: relative;
   display: inline-block;
   border: 2px solid #252320;
   border-radius: 2% 7% 5% 4%/1% 1% 2% 4%;
 }
-.account form::before {
+.account .outerForm::before {
   content: "";
   pointer-events: none;
   border: 2px solid #252320;
@@ -196,6 +196,12 @@ a {
 }
 .account button {
   margin: 10px 0 0 0;
+}
+.account .editContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 15px;
 }
 
 .login {
