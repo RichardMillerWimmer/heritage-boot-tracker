@@ -5,8 +5,9 @@ import axios from 'axios';
 import { User } from 'customTypes';
 
 import Button from './Button';
+import { RouteComponentProps } from 'react-router-dom';
 
-const Register: React.FC = () => {
+const Register: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
     const [username, setUsername] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -24,6 +25,7 @@ const Register: React.FC = () => {
                 setUsername('');
                 setEmail('');
                 setPassword('');
+                props.history.push('/');
             })
             .catch((error => {
                 console.log(error)

@@ -5,8 +5,9 @@ import axios from 'axios';
 import { User } from 'customTypes';
 
 import Button from './Button';
+import { RouteComponentProps } from 'react-router-dom';
 
-const Login: React.FC = () => {
+const Login: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     // const [isError, setIsError] = useState<boolean>(false);
@@ -22,6 +23,7 @@ const Login: React.FC = () => {
                 dispatch({ type: 'UPDATE_USER', payload: user });
                 setEmail('');
                 setPassword('');
+                props.history.push('/');
             })
             .catch((error => {
                 console.log(error) 
