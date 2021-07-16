@@ -191,6 +191,9 @@ a {
 .account h3 {
   margin-bottom: 20px;
 }
+.account p {
+  font-size: 0.8rem;
+}
 .account input {
   margin: 5px 0;
 }
