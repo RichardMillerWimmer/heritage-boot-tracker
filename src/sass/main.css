@@ -162,6 +162,42 @@ a {
   color: white;
 }
 
+.account {
+  margin: 50px 20px;
+  height: calc( 100vh - 270px );
+  text-align: center;
+  position: relative;
+}
+.account form {
+  padding: 30px 50px;
+  position: relative;
+  display: inline-block;
+  border: 2px solid #252320;
+  border-radius: 2% 7% 5% 4%/1% 1% 2% 4%;
+}
+.account form::before {
+  content: "";
+  pointer-events: none;
+  border: 2px solid #252320;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.75deg);
+  border-radius: 1% 1% 2% 2%/8% 6% 5% 4%;
+}
+.account h3 {
+  margin-bottom: 20px;
+}
+.account input {
+  margin: 5px 0;
+}
+.account button {
+  margin: 10px 0 0 0;
+}
+
 .login {
   margin: 50px 20px;
   height: calc( 100vh - 270px );

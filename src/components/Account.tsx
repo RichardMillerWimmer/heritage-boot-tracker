@@ -88,83 +88,85 @@ const Account: React.FC<RouteChildrenProps> = (props: RouteChildrenProps) => {
     };
 
     return (
-        <div>
-            <div>
-                <h3>My Account</h3>
-                {!isEditingUsername ? (
-                    <section>
-                        <p>username: {username}</p>
-                        <button onClick={toggleEditUsername}>edit</button>
-                    </section>
-                ) : (
-                    <form
-                        onSubmit={(e: React.SyntheticEvent) => {
-                            e.preventDefault();
-                        }}
-                    >
-                        <p>username:</p>
-                        <input
-                            value={username}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setUsername(e.target.value)}
-                        />
-                        <button onClick={(): void => saveChanges('username')}>save</button>
-                        <button onClick={(): void => { cancelChanges(); toggleEditUsername(); }}>cancel</button>
-                    </form>
-                )}
-                {!isEditingEmail ? (
-                    <section>
-                        <p>email: {email}</p>
-                        <button onClick={toggleEditEmail}>edit</button>
-                    </section>
-                ) : (
-                    <form
-                        onSubmit={(e: React.SyntheticEvent) => {
-                            e.preventDefault();
-                        }}
-                    >
-                        <p>email:</p>
-                        <input
-                            value={email}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
-                        />
-                        <button onClick={(): void => saveChanges('email')}>save</button>
-                        <button onClick={(): void => { cancelChanges(); toggleEditEmail(); }}>cancel</button>
-                    </form>
-                )}
-                {!isEditingPassword ? (
-                    <section>
-                        <p>password: {password}</p>
-                        <button onClick={toggleEditPassword}>edit</button>
-                    </section>
-                ) : (
-                    <form
-                        onSubmit={(e: React.SyntheticEvent) => {
-                            e.preventDefault();
-                        }}
-                    >
-                        <p>password:</p>
-                        <input
-                            type='password'
-                            value={password}
-                            onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
-                        />
-                        <button onClick={(): void => saveChanges('password')}>save</button>
-                        <button onClick={(): void => { cancelChanges(); toggleEditPassword(); }}>cancel</button>
-                    </form>
-                )}
-            </div>
-            {!isDeleting ? (
-                <>
-                    <button onClick={toggleDelete}>delete</button>
-                </>
-            ) :
-                (
-                    <div>
-                        <p>Are you sure you wish to delete your account?</p>
-                        <button onClick={confirmDelete}>confirm</button>
-                        <button onClick={toggleDelete}>&#10005;</button>
-                    </div>
-                )}
+        <div className='account'>
+            <form>
+                <div>
+                    <h3>My Account</h3>
+                    {!isEditingUsername ? (
+                        <section>
+                            <p>username: {username}</p>
+                            <button onClick={toggleEditUsername}>edit</button>
+                        </section>
+                    ) : (
+                        <form
+                            onSubmit={(e: React.SyntheticEvent) => {
+                                e.preventDefault();
+                            }}
+                        >
+                            <p>username:</p>
+                            <input
+                                value={username}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setUsername(e.target.value)}
+                            />
+                            <button onClick={(): void => saveChanges('username')}>save</button>
+                            <button onClick={(): void => { cancelChanges(); toggleEditUsername(); }}>cancel</button>
+                        </form>
+                    )}
+                    {!isEditingEmail ? (
+                        <section>
+                            <p>email: {email}</p>
+                            <button onClick={toggleEditEmail}>edit</button>
+                        </section>
+                    ) : (
+                        <form
+                            onSubmit={(e: React.SyntheticEvent) => {
+                                e.preventDefault();
+                            }}
+                        >
+                            <p>email:</p>
+                            <input
+                                value={email}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
+                            />
+                            <button onClick={(): void => saveChanges('email')}>save</button>
+                            <button onClick={(): void => { cancelChanges(); toggleEditEmail(); }}>cancel</button>
+                        </form>
+                    )}
+                    {!isEditingPassword ? (
+                        <section>
+                            <p>password: {password}</p>
+                            <button onClick={toggleEditPassword}>edit</button>
+                        </section>
+                    ) : (
+                        <form
+                            onSubmit={(e: React.SyntheticEvent) => {
+                                e.preventDefault();
+                            }}
+                        >
+                            <p>password:</p>
+                            <input
+                                type='password'
+                                value={password}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
+                            />
+                            <button onClick={(): void => saveChanges('password')}>save</button>
+                            <button onClick={(): void => { cancelChanges(); toggleEditPassword(); }}>cancel</button>
+                        </form>
+                    )}
+                </div>
+                {!isDeleting ? (
+                    <>
+                        <button onClick={toggleDelete}>delete</button>
+                    </>
+                ) :
+                    (
+                        <div>
+                            <p>Are you sure you wish to delete your account?</p>
+                            <button onClick={confirmDelete}>confirm</button>
+                            <button onClick={toggleDelete}>&#10005;</button>
+                        </div>
+                    )}
+            </form>
         </div>
     )
 }
