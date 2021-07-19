@@ -29,7 +29,7 @@ const Dropdown: React.FC = () => {
                 <div>
                     <p>{open ? 'Close' : 'Open'} </p>
                     <div> {open ? 
-                        <div>{user ?
+                        <nav>{!user ?
                             <ul>
                                 <li>Home</li>
                                 <li>Login</li>
@@ -42,7 +42,7 @@ const Dropdown: React.FC = () => {
                                 <li>Logout</li>
                             </ul>
                         }
-                        </div> 
+                        </nav> 
                         :
                         ''
                         }
