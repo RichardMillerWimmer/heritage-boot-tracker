@@ -19,7 +19,7 @@ const Header: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
 
     return (
         <section className='header'>
-            <h2>BootHunter</h2>
+            {/* <h2>BootHunter</h2> */}
             <button onClick={logout}>logout</button>
             <Dropdown />
         </section>
