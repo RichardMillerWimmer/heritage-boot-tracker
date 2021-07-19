@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { RouteComponentProps, withRouter } from 'react-router';
+import Dropdown from './Dropdown';
 
 const Header: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
 
@@ -20,6 +21,7 @@ const Header: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
         <section className='header'>
             <h2>BootHunter</h2>
             <button onClick={logout}>logout</button>
+            <Dropdown />
         </section>
     )
 }
