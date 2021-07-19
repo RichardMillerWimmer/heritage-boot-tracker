@@ -318,11 +318,26 @@ a {
 }
 
 .navigation {
-  text-align: right;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .mobilenav {
-  text-align: right;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.navigation a {
+  color: #252320;
+  border-bottom: 2px solid transparent;
+}
+.navigation:hover {
+  border-bottom: 2px solid #252320;
+}
+
+.mobilenav a {
+  color: #252320;
+  border-bottom: 2px solid transparent;
 }
 
 @media (min-width: 455px) {

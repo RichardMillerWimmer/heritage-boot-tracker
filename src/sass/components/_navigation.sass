@@ -1,9 +1,23 @@
 .navigation 
-    text-align: right
+    display: flex
+    flex-flow: column nowrap
 
 .mobilenav
-    text-align: right
+    display: flex
+    flex-flow: column nowrap
 
+.navigation
+    a 
+        // display: inline-block
+        // margin: 15px
+        color: $color-dark
+        border-bottom: 2px solid transparent
+    &:hover
+        border-bottom: 2px solid $color-dark
+.mobilenav
+    a 
+        color: $color-dark
+        border-bottom: 2px solid transparent
 
 @media ( min-width: $bp-mobile )
     .mobilenav

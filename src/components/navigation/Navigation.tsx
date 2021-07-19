@@ -17,7 +17,6 @@ const Navigation: React.FC = () => {
 
     return (
         <div className='navigation'>
-            <p>nav</p>
             <NavLinks />
         </div>
     )
