@@ -317,4 +317,23 @@ a {
   margin: 10px 0 0 0;
 }
 
+.navigation {
+  text-align: right;
+}
+
+.mobilenav {
+  text-align: right;
+}
+
+@media (min-width: 455px) {
+  .mobilenav {
+    display: none;
+  }
+}
+@media (max-width: 454px) {
+  .navigation {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

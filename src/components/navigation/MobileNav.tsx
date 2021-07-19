@@ -18,6 +18,7 @@ const MobileNav: React.FC = () => {
 
     return (
         <div className='mobilenav'>
+            <p>mobile nav</p>
             <NavLinks />
         </div>
     )

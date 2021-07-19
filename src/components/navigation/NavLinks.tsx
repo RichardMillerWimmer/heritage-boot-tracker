@@ -25,7 +25,7 @@ const NavLinks: React.FC<RouteComponentProps> = (props: RouteComponentProps) => 
 
     return (
         <div className='navlinks'>
-            <nav>{!user ?
+            <nav>{!user.username ?
                 <ul>
                     <Link to='/'>Home</Link>
                     <Link to='/login'>Login</Link>
