@@ -7,14 +7,25 @@
     // width: auto
     margin: 5px
     color: $color-dark
-    border-bottom: 2px solid transparent
+    border-bottom: 3px solid transparent
     &:hover
-        border-bottom: 2px solid $color-dark
+        border-bottom: 3px solid $color-red
 
 @media ( min-width: $bp-mobile )
     .mobilenav
         display: none
+    .navlinks
+        display: flex
+        flex-flow: row nowrap
+        justify-content: center
+        align-items: center
+        height: 70px
+        .link
+            margin: 0 20px
+            font-size: 1.8rem
+            
 @media ( max-width: $bp-mobile - 1 )
     .navigation 
         display: none
+    
     

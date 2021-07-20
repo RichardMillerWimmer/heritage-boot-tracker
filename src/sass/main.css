@@ -326,15 +326,27 @@ a {
   display: inline-block;
   margin: 5px;
   color: #252320;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 .link:hover {
-  border-bottom: 2px solid #252320;
+  border-bottom: 3px solid #c11129;
 }
 
 @media (min-width: 455px) {
   .mobilenav {
     display: none;
+  }
+
+  .navlinks {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+  }
+  .navlinks .link {
+    margin: 0 20px;
+    font-size: 1.8rem;
   }
 }
 @media (max-width: 454px) {
