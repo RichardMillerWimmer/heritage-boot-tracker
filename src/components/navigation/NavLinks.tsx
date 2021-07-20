@@ -24,18 +24,18 @@ const NavLinks: React.FC<RouteComponentProps> = (props: RouteComponentProps) => 
     }
 
     return (
-        <div className='navlinks'>
-            <nav>{!user.username ?
-                <ul>
-                    <Link to='/'>Home</Link>
-                    <Link to='/login'>Login</Link>
-                    <Link to='/register'>Register</Link>
+        <div >
+            <nav >{!user.username ?
+                <ul className='navlinks'>
+                    <Link className='link' to='/'>Home</Link>
+                    <Link className='link' to='/login'>Login</Link>
+                    <Link className='link' to='/register'>Register</Link>
                 </ul>
                 :
-                <ul>
-                    <Link to='/'>Home</Link>
-                    <Link to='/account'>Account</Link>
-                    <a onClick={logout}>Logout</a>
+                <ul className='navlinks'>
+                    <Link className='link' to='/'>Home</Link>
+                    <Link className='link' to='/account'>Account</Link>
+                    <a className='link' onClick={logout}>Logout</a>
                 </ul>
             }
             </nav>

@@ -317,27 +317,19 @@ a {
   margin: 10px 0 0 0;
 }
 
-.navigation {
+.navlinks {
   display: flex;
   flex-flow: column nowrap;
 }
 
-.mobilenav {
-  display: flex;
-  flex-flow: column nowrap;
-}
-
-.navigation a {
+.link {
+  display: inline;
+  margin: 5px;
   color: #252320;
   border-bottom: 2px solid transparent;
 }
-.navigation:hover {
+.link:hover {
   border-bottom: 2px solid #252320;
-}
-
-.mobilenav a {
-  color: #252320;
-  border-bottom: 2px solid transparent;
 }
 
 @media (min-width: 455px) {
