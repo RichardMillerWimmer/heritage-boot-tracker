@@ -27,15 +27,15 @@ const NavLinks: React.FC<RouteComponentProps> = (props: RouteComponentProps) => 
         <div >
             <nav >{!user.username ?
                 <ul className='navlinks'>
-                    <Link className='link' to='/'>Home</Link>
-                    <Link className='link' to='/login'>Login</Link>
-                    <Link className='link' to='/register'>Register</Link>
+                    <li><Link className='link' to='/'>Home</Link></li>
+                    <li><Link className='link' to='/login'>Login</Link></li>
+                    <li><Link className='link' to='/register'>Register</Link></li>
                 </ul>
                 :
                 <ul className='navlinks'>
-                    <Link className='link' to='/'>Home</Link>
-                    <Link className='link' to='/account'>Account</Link>
-                    <a className='link' onClick={logout}>Logout</a>
+                    <li><Link className='link' to='/'>Home</Link></li>
+                    <li><Link className='link' to='/account'>Account</Link></li>
+                    <li><a className='link' onClick={logout}>Logout</a></li>
                 </ul>
             }
             </nav>
