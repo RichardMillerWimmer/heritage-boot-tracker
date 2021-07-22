@@ -30,12 +30,14 @@ const NavLinks: React.FC<RouteComponentProps> = (props: RouteComponentProps) => 
                     <li><Link className='link' to='/'>Home</Link></li>
                     <li><Link className='link' to='/login'>Login</Link></li>
                     <li><Link className='link' to='/register'>Register</Link></li>
+                    <li><p className='upArrow'>&#10514;</p></li>
                 </ul>
                 :
                 <ul className='navlinks'>
                     <li><Link className='link' to='/'>Home</Link></li>
                     <li><Link className='link' to='/account'>Account</Link></li>
                     <li><a className='link' onClick={logout}>Logout</a></li>
+                    <li><p className='upArrow'>&#10514;</p></li>
                 </ul>
             }
             </nav>

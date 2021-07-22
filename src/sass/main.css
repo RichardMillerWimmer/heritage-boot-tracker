@@ -364,6 +364,11 @@ a {
   }
   .navlinks .link {
     margin: 0 20px;
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .navlinks .link {
     font-size: 1.8rem;
   }
 }
