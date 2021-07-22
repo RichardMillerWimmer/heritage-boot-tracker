@@ -207,6 +207,12 @@ a {
   margin-bottom: 15px;
 }
 
+.bootCollection {
+  margin: 50px 20px;
+  height: calc( 100vh - 270px );
+  text-align: center;
+}
+
 .login {
   margin: 50px 20px;
   height: calc( 100vh - 270px );

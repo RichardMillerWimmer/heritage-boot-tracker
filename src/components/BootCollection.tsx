@@ -37,10 +37,10 @@ const BootCollection: React.FC = () => {
 
 
     return (
-        <div>
+        <section className='bootCollection'>
             <h3>{user.username} Boot Collection</h3>
             {mappedBoots}
-        </div>
+        </section>
     )
 }
 
