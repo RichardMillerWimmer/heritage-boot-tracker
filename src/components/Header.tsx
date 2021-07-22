@@ -3,14 +3,13 @@ import { withRouter } from 'react-router';
 
 // import Dropdown from './Dropdown';
 import Navigation from './navigation/Navigation';
-import MobileNav from './navigation/MobileNav';
+
 
 
 const Header: React.FC = () => {
 
     return (
         <section className='header'>
-            <MobileNav />
             <Navigation />
         </section>
     )

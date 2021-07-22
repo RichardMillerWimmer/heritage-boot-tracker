@@ -1,6 +1,8 @@
 .navlinks 
     display: flex
     flex-flow: column nowrap
+    background: $color-secondary
+    text-align: center
 
 .link
     display: inline-block
@@ -11,9 +13,8 @@
     &:hover
         border-bottom: 3px solid $color-red
 
+
 @media ( min-width: $bp-mobile )
-    .mobilenav
-        display: none
     .navlinks
         display: flex
         flex-flow: row nowrap
@@ -24,8 +25,5 @@
             margin: 0 20px
             font-size: 1.8rem
             
-@media ( max-width: $bp-mobile - 1 )
-    .navigation 
-        display: none
     
     

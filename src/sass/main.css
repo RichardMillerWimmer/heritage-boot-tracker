@@ -340,6 +340,8 @@ a {
 .navlinks {
   display: flex;
   flex-flow: column nowrap;
+  background: #eae5d8;
+  text-align: center;
 }
 
 .link {
@@ -353,10 +355,6 @@ a {
 }
 
 @media (min-width: 455px) {
-  .mobilenav {
-    display: none;
-  }
-
   .navlinks {
     display: flex;
     flex-flow: row nowrap;
@@ -367,11 +365,6 @@ a {
   .navlinks .link {
     margin: 0 20px;
     font-size: 1.8rem;
-  }
-}
-@media (max-width: 454px) {
-  .navigation {
-    display: none;
   }
 }
 
