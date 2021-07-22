@@ -213,6 +213,20 @@ a {
   text-align: center;
 }
 
+.addBootBtn {
+  margin: 30px;
+}
+
+@media (min-width: 768px) {
+  .addBootBtn {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .addBootContainer {
+    display: none;
+  }
+}
 .login {
   margin: 50px 20px;
   height: calc( 100vh - 270px );
